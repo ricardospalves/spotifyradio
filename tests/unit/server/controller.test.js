@@ -4,7 +4,7 @@ import TestUtil from '../_util/testUtil'
 import { Service } from '../../../server/service'
 import { Controller } from '../../../server/controller'
 
-describe('#Controller - test suit for API control', () => {
+describe('#Controller - test suite for controller calls', () => {
   beforeEach(() => {
     jest.resetAllMocks()
     jest.clearAllMocks()
@@ -23,7 +23,7 @@ describe('#Controller - test suit for API control', () => {
       })
 
     const controller = new Controller()
-    const { stream, type } = await controller.getFileStream()
+    const { stream, type } = await controller.getFileStream(mockFilename)
 
     expect(stream).toStrictEqual(mockStream)
     expect(type).toStrictEqual(mockType)
