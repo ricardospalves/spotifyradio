@@ -1,8 +1,8 @@
 import { jest, expect, describe, test, beforeEach } from '@jest/globals'
 
-import TestUtil from '../_util/testUtil'
-import { Service } from '../../../server/service'
-import { Controller } from '../../../server/controller'
+import TestUtil from '../_util/testUtil.js'
+import { Service } from '../../../server/service.js'
+import { Controller } from '../../../server/controller.js'
 
 describe('#Controller - test suite for controller calls', () => {
   beforeEach(() => {
