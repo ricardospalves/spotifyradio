@@ -5,6 +5,7 @@ const currentDirectory = dirname(fileURLToPath(import.meta.url))
 const root = join(currentDirectory, '../')
 const audioDirectory = join(root, 'audio')
 const publicDirectory = join(root, 'public')
+const songsDirectory = join(audioDirectory, 'songs')
 
 export default {
   port: process.env.PORT || 3000,
@@ -13,7 +14,7 @@ export default {
     public: publicDirectory,
     current: currentDirectory,
     audio: audioDirectory,
-    songs: join(audioDirectory, 'songs'),
+    songs: songsDirectory,
     fx: join(audioDirectory, 'fx'),
   },
   pages: {
@@ -29,5 +30,9 @@ export default {
       '.css': 'text/css',
       '.js': 'text/javascript',
     },
+    audioMediaType: 'mp3',
+    songVolume: '0.99',
+    fallbackBitRate: '128000',
+    englishConversation: join(songsDirectory, 'conversation.mp3'),
   },
 }
