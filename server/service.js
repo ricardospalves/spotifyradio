@@ -17,8 +17,6 @@ export class Service {
     this.currentBitRate = 0
     this.throttleTransform = {}
     this.currentReadable = {}
-
-    this.startStreaming()
   }
 
   broadCast() {
@@ -50,6 +48,10 @@ export class Service {
     ))
 
     streamsPromises.pipeline(songReadable, throttleTransform, this.broadCast())
+  }
+
+  stopStreaming() {
+    this.throttleTransform?.end?.()
   }
 
   _executeSoxCommand(args) {
