@@ -5,7 +5,7 @@ import { join, extname } from 'path'
 import { PassThrough, Writable } from 'stream'
 import config from './config.js'
 import Throttle from 'throttle'
-import { ChildProcess } from 'child_process'
+import child_process from 'child_process'
 import { logger } from './utils.js'
 import streamsPromises from 'stream/promises'
 import { once } from 'events'
@@ -53,7 +53,7 @@ export class Service {
   }
 
   _executeSoxCommand(args) {
-    return ChildProcess.spawn('sox', args)
+    return child_process.spawn('sox', args)
   }
 
   async getBitRate(song) {
